@@ -1,0 +1,16 @@
+A simple multiworker http server using event-driven. I just want to take it as
+my own network programming practice.
+
+Main thread forks some worker threads, wait for request and dispatch requests
+to workers.
+
+Now it supports only GET and HEAD.
+
+It uses http_parser and libevent. Because http protocol RFC2616 is so tedious,
+I cannot read all. And I plan to replace libevent with a simple event lib
+written by myself, in order to practice. I now use libevent for convenience.
+
+A simple introduction about the orgin version, which only used a single worker,
+can be found at:
+    http://blog.csdn.net/tricky1997/article/details/7438242
+This version has added the multiworker support.
